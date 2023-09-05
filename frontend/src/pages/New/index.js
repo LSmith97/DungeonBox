@@ -1,5 +1,10 @@
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router";
+
 export default function New(){
     return(
-        <h1>New</h1>
+        <form>
+
+        </form>
     )
 }

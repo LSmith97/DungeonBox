@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 export default function Nav(){
     return (
         <nav className="Nav">
             <Link to="/">
-                    Home
+                <Button variant="contained">Home</Button>
             </Link>
             <Link to="/characters">
-                View All
+            <Button variant="contained">View All</Button>
             </Link>
             <Link to="/characters/new">
-                New Character
+            <Button variant="contained">New Character</Button>
             </Link>
         </nav>
     )

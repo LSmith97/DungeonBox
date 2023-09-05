@@ -1,7 +1,10 @@
+import Button from '@mui/material/Button';
+
 export default function Main(){
     return(
         <div>
-            <h2>Main</h2>
+            
         </div>
     )
 }
+

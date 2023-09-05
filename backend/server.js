@@ -18,13 +18,27 @@ const express = require("express");
 // create application object
 const app = express();
 
+
+const cors = require("cors")
+const morgan = require("morgan")
+
+// import people router
+const charRouter = require('./routes/characters')
+
+///////////////////////////////
+// MIDDLEWARE
+////////////////////////////////
+app.use(express.urlencoded({extended:true}))
+app.use(express.json()); // parse json bodies - this will run before our request accesses the people router
+
+app.use(cors()); // to minimize cors errors, open access to all origins
+app.use(morgan("dev")); // logging for development
+
 ///////////////////////////////
 // ROUTES
 ////////////////////////////////
-// create a test route
-app.get("/", (req, res) => {
-    res.send("hello world");
-});
+
+app.use('/characters', charRouter)
 
 ///////////////////////////////
 // LISTENER

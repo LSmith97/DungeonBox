@@ -1,0 +1,23 @@
+header {
+    background-color: maroon;
+    color: white;
+}
+
+.Nav {
+    background-color: rgb(165, 0, 0);
+    padding: .5rem 0 .5rem 0;
+    display: flex;
+    gap: 20px;
+}
+
+.Nav a{
+    background-color: maroon;
+    border-radius: .5rem;
+    padding: .5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.Nav a:hover{
+    background-color: rgb(82, 0, 0);
+}

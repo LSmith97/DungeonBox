@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router"
 import { getOne, deleteChar } from "../../utilities/characters-service"
 import { Button, Stack } from "@mui/material"
+import { Link } from "react-router-dom"
 
 import "./Show.css"
 import StatDisplay from "./StatDisplay"
@@ -40,9 +41,11 @@ export default function Show(){
         return (
             <div className="char-page">
                 <h1>Character Details:</h1>
+                
                 <div className="char-image">
                     <img alt={char.name} src={char.image ? char.image : "https://i.imgur.com/KT5izT5.png"}/> 
                 </div>
+
                 <Stack spacing={4} className="details" alignItems="flex-start" justifyContent="center">
                     <Stack spacing={1} direction="row">
                         <h3>Name:</h3>
@@ -61,6 +64,7 @@ export default function Show(){
                         <p>{char.class}</p>
                     </Stack>
                 </Stack>
+
                 <div className="stats">
                     <h2>Stats:</h2>
                     <StatDisplay stat="Strength" value={char.str}/>
@@ -70,8 +74,12 @@ export default function Show(){
                     <StatDisplay stat="Wisdom" value={char.wis}/>
                     <StatDisplay stat="Charisma" value={char.cha}/>
                 </div>
+
                 <Stack className="show-buttons" spacing={1} direction="row" alignItems="center" justifyContent="center"> 
                     <Button onClick={handleDelete} variant="contained">Delete Character</Button>
+                    <Link to={`/characters/${id}/edit`}>
+                        <Button variant="contained">Edit Character</Button>
+                    </Link>
                 </Stack>
                 
             </div>

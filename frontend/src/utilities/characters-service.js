@@ -17,3 +17,12 @@ export async function createCharacter(data) {
     throw error;
   }
 }
+
+export async function getOne(id) {
+    try {
+      const foundChar = await characterAPI.detail(id);
+      return foundChar;
+    } catch (err) {
+      throw err;
+    }
+}

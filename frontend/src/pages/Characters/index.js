@@ -1,6 +1,5 @@
 import CharacterList from "../../components/CharacterList";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom"
 import { getCharacters } from "../../utilities/characters-service";
 
 export default function Characters(){

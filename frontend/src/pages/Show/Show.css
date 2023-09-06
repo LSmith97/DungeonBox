@@ -1,0 +1,51 @@
+.char-page {
+    margin: 0 10% 0 10%;
+    display: grid;
+    grid-template:
+    "header header" auto 
+    "img details" auto
+    "stats stats" auto
+    / 1.5fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.char-page > h1 {
+    grid-area: header;
+}
+
+.char-image {
+    grid-area: img;
+}
+.char-image > img {
+    height: 500px;
+}
+
+.stats {
+    grid-area: stats;
+    gap: .5rem 3rem;
+
+    display: grid;
+    grid-template:
+    "header header header" auto 
+    ". . ." auto
+    ". . ." auto
+    / 1fr 1fr 1fr;
+}
+
+.stats > h2 {
+    grid-area: header;
+}
+
+.stat-bubble {
+    border: 1px solid grey;
+    padding: 0 1rem 0 1rem;
+    border-radius: 1rem;
+    background-color: rgb(16, 20, 24);
+}
+
+.stat-bubble p {
+    border: 1px solid grey;
+    padding: 2px 2rem 2px 2rem;
+    background-color: rgb(15, 25, 36);
+}

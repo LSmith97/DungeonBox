@@ -7,7 +7,7 @@ A web-based application that allows users to create characters for use in tablet
 ## Technologies Used
 
 <ul>
-  <li>MongoDB</li
+  <li>MongoDB</li>
   <li>Express.js</li>
   <li>React.js</li>
   <li>Node.js</li>

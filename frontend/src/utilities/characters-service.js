@@ -26,3 +26,12 @@ export async function getOne(id) {
       throw err;
     }
 }
+
+export async function deleteChar(id) {
+    try {
+      const deletedChar = await characterAPI.destroy(id);
+      return deletedChar;
+    } catch (err) {
+      throw err;
+    }
+  }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router"
-import { getOne } from "../../utilities/characters-service"
-import { Stack } from "@mui/material"
+import { getOne, deleteChar } from "../../utilities/characters-service"
+import { Button, Stack } from "@mui/material"
 
 import "./Show.css"
 import StatDisplay from "./StatDisplay"
@@ -23,6 +23,16 @@ export default function Show(){
             setChar(charData)
         } catch (error) {
             console.log(error)
+        }
+    }
+
+    async function handleDelete() {
+        try {
+            const deletedResp = await deleteChar(id)
+            navigate('/characters')
+        } catch (error) {
+            console.log(error)
+            navigate(`/characters/${id}`)
         }
     }
 
@@ -60,6 +70,9 @@ export default function Show(){
                     <StatDisplay stat="Wisdom" value={char.wis}/>
                     <StatDisplay stat="Charisma" value={char.cha}/>
                 </div>
+                <Stack className="show-buttons" spacing={1} direction="row" alignItems="center" justifyContent="center"> 
+                    <Button onClick={handleDelete} variant="contained">Delete Character</Button>
+                </Stack>
                 
             </div>
         )
@@ -72,5 +85,4 @@ export default function Show(){
     }
 
     return char ? loaded() : loading()
-    
 }

@@ -5,6 +5,7 @@
     "header header" auto 
     "img details" auto
     "stats stats" auto
+    "buttons buttons" auto
     / 1.5fr 1fr;
     justify-items: center;
     align-items: center;
@@ -48,4 +49,9 @@
     border: 1px solid grey;
     padding: 2px 2rem 2px 2rem;
     background-color: rgb(15, 25, 36);
+}
+
+.show-buttons {
+    margin: 2rem 0 1rem 0;
+    grid-area: buttons;
 }

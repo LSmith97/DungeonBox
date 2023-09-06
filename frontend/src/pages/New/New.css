@@ -3,3 +3,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+.MuiFormHelperText-filled {
+    color: white;
+}
+
+.MuiSelect-select {
+    background-color: white;
+}

@@ -78,8 +78,19 @@ export default function New() {
       </MenuItem>
     ));
 
+    const style = {  
+        input: { background: 'white' },
+        select: { background: 'white'},
+        ".MuiFormHelperText-root": {color: 'white' },
+        ".MuiSelect-select": { background: 'white'}
+
+    }
+
+
+
     return (
       <section>
+        
         <h2>New Character</h2>
         <form onSubmit={handleSubmit} className="new-char-form">
           <TextField
@@ -89,6 +100,7 @@ export default function New() {
             helperText="Your character's name"
             value={newForm.name}
             onChange={handleChange}
+            sx={style}
           />
           <TextField
             name="level"
@@ -99,6 +111,7 @@ export default function New() {
             inputProps={{ min: 1, max: 20 }}
             value={newForm.level}
             onChange={handleChange}
+            sx={style}
           />
           <TextField
             name="race"
@@ -108,6 +121,7 @@ export default function New() {
             helperText="Your character's lineage"
             value={newForm.race}
             onChange={handleChange}
+            sx={style}
           >
             {raceOptions}
           </TextField>
@@ -119,6 +133,7 @@ export default function New() {
             helperText="Your primary class"
             value={newForm.class}
             onChange={handleChange}
+            sx={style}
           >
             {classOptions}
           </TextField>
@@ -129,6 +144,7 @@ export default function New() {
             helperText="Your character's appearance, optional"
             value={newForm.image}
             onChange={handleChange}
+            sx={style}
           />
           <h2>Stats</h2>
           <p>
@@ -145,6 +161,7 @@ export default function New() {
               helperText="Physical Prowess"
               value={newForm.str}
               onChange={handleChange}
+              sx={style}
             />
             <TextField
               name="dex"
@@ -155,6 +172,7 @@ export default function New() {
               helperText="Co-ordination and Reflexes"
               value={newForm.dex}
               onChange={handleChange}
+              sx={style}
             />
             <TextField
               name="con"
@@ -165,6 +183,7 @@ export default function New() {
               helperText="Physical Resilience"
               value={newForm.con}
               onChange={handleChange}
+              sx={style}
             />
             <TextField
               name="int"
@@ -175,6 +194,7 @@ export default function New() {
               helperText="Knowledge and Education"
               value={newForm.int}
               onChange={handleChange}
+              sx={style}
             />
             <TextField
               name="wis"
@@ -185,6 +205,7 @@ export default function New() {
               helperText="Experience and Awareness"
               value={newForm.wis}
               onChange={handleChange}
+              sx={style}
             />
             <TextField
               name="cha"
@@ -195,6 +216,7 @@ export default function New() {
               helperText="Charm and Force of will"
               value={newForm.cha}
               onChange={handleChange}
+              sx={style}
             />
           </div>
           <Button type="submit" variant="contained">

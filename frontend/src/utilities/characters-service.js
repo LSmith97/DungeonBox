@@ -13,8 +13,8 @@ export async function createCharacter(data) {
   try {
     const newCharacter = await characterAPI.create(data);
     return newCharacter;
-  } catch (error) {
-    throw error;
+  } catch (err) {
+    throw err;
   }
 }
 
@@ -33,5 +33,14 @@ export async function deleteChar(id) {
       return deletedChar;
     } catch (err) {
       throw err;
+    }
+}
+
+export async function updateChar(id,data){
+    try {
+        const updatedChar = await characterAPI.update(id,data)
+        return updatedChar
+    }catch(err){
+        throw err
     }
   }

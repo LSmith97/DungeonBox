@@ -22,7 +22,7 @@ const morgan = require("morgan");
 
 // import people router
 const charRouter = require("./routes/characters");
-const userRouter = require("./routes/users.js");
+const userRouter = require("./routes/users");
 
 ///////////////////////////////
 // MIDDLEWARE
@@ -38,7 +38,7 @@ app.use(morgan("dev")); // logging for development
 ////////////////////////////////
 
 app.use("/characters", charRouter);
-app.use("/users", userRouter)
+app.use("/users", userRouter);
 
 ///////////////////////////////
 // LISTENER

@@ -11,6 +11,6 @@ const userCtrl = require("../controllers/users");
 ////////////////////////////////
 
 //show route
-router.get("/:id", charCtrl.show);
+router.get("/:id", userCtrl.show);
 
 module.exports = router;

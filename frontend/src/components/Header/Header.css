@@ -12,3 +12,7 @@ header h1 {
     display: flex;
     gap: 20px;
 }
+
+.nav-end {
+    margin-left: auto;
+}

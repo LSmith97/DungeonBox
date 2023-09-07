@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 import LoginButton from "../Auth/LoginButton";
 import LogoutButton from "../Auth/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Stack, Button, Avatar } from "@mui/material";
 
 export default function Nav() {
   const { user } = useAuth0();
@@ -20,10 +20,17 @@ export default function Nav() {
           <Link to="/characters/new">
             <Button variant="contained">New Character</Button>
           </Link>
+          <Stack className="nav-end" spacing={1} direction="row" alignItems="center" justifyContent="center" >
+            <h3>Signed in as:</h3>
+            <Avatar alt={user.name} src={user.picture} sx={{ height: 30, width: 30}}/>
+            <h3>{user.name}</h3>
+          </Stack>
           <LogoutButton />
         </>
       ) : (
-        <LoginButton />
+        <div className="nav-end">
+          <LoginButton  />
+        </div>
       )}
     </nav>
   );

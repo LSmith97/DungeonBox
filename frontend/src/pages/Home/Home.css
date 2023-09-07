@@ -1,0 +1,13 @@
+.home {
+    width: 60%;
+    margin: 2rem auto 0 auto;
+    background-color: rgb(15, 25, 36);
+    color: white;
+    padding: 3rem;
+    border: 1px solid grey;
+    border-radius: 5rem;
+}
+
+.home h2 {
+    padding-top: 5rem;
+}

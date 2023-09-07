@@ -19,28 +19,28 @@ export async function createCharacter(data) {
 }
 
 export async function getOne(id) {
-    try {
-      const foundChar = await characterAPI.detail(id);
-      return foundChar;
-    } catch (err) {
-      throw err;
-    }
+  try {
+    const foundChar = await characterAPI.detail(id);
+    return foundChar;
+  } catch (err) {
+    throw err;
+  }
 }
 
 export async function deleteChar(id) {
-    try {
-      const deletedChar = await characterAPI.destroy(id);
-      return deletedChar;
-    } catch (err) {
-      throw err;
-    }
+  try {
+    const deletedChar = await characterAPI.destroy(id);
+    return deletedChar;
+  } catch (err) {
+    throw err;
+  }
 }
 
-export async function updateChar(id,data){
-    try {
-        const updatedChar = await characterAPI.update(id,data)
-        return updatedChar
-    }catch(err){
-        throw err
-    }
+export async function updateChar(id, data) {
+  try {
+    const updatedChar = await characterAPI.update(id, data);
+    return updatedChar;
+  } catch (err) {
+    throw err;
   }
+}

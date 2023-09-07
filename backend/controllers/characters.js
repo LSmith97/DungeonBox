@@ -5,6 +5,10 @@
 const express = require("express");
 const { Character, User } = require("../models");
 
+///////////////////////////////
+// CONTROLLERS
+////////////////////////////////
+
 module.exports = {
   index,
   show,

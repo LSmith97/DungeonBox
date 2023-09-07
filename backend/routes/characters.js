@@ -1,12 +1,10 @@
-// ./routes/people.js
-
 ///////////////////////////////
 // DEPENDENCIES
 ////////////////////////////////
 
-const express = require('express')
-const router = express.Router()
-const charCtrl = require('../controllers/characters')
+const express = require("express");
+const router = express.Router();
+const charCtrl = require("../controllers/characters");
 
 ///////////////////////////////
 // ROUTES
@@ -27,5 +25,4 @@ router.delete("/:id", charCtrl.destroy);
 //update route
 router.put("/:id", charCtrl.update);
 
-module.exports = router
-
+module.exports = router;

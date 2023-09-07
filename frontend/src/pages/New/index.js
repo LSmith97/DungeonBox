@@ -8,6 +8,7 @@ export default function New() {
   const { user } = useAuth0();
 
   const [newForm, setNewForm] = useState({
+    owner: user,
     name: "",
     level: 1,
     race: "Human",

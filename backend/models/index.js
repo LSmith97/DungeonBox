@@ -1,4 +1,5 @@
 // index.js
 module.exports = {
-    Character: require('./Character')
+    Character: require('./Character'),
+    User: require('./User')
 }

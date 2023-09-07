@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import LoginButton from "../Auth/LoginButton";
 import LogoutButton from "../Auth/LogoutButton";
-import { useAuth0 } from "@auth0/auth0-react"
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Nav() {
-
-  const { user } = useAuth0()
+  const { user } = useAuth0();
 
   return (
     <nav className="Nav">
@@ -16,10 +15,16 @@ export default function Nav() {
       <Link to="/characters">
         <Button variant="contained">View All</Button>
       </Link>
-      <Link to="/characters/new">
-        <Button variant="contained">New Character</Button>
-      </Link>
-      {user ? <LogoutButton /> : <LoginButton />}
+      {user ? (
+        <>
+          <Link to="/characters/new">
+            <Button variant="contained">New Character</Button>
+          </Link>
+          <LogoutButton />
+        </>
+      ) : (
+        <LoginButton />
+      )}
     </nav>
   );
 }

@@ -2,8 +2,11 @@ import { createCharacter } from "../../utilities/characters-service";
 import CharacterForm from "../../components/CharacterForm";
 import { useNavigate } from "react-router";
 import { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function New() {
+  const { user } = useAuth0();
+
   const [newForm, setNewForm] = useState({
     name: "",
     level: 1,
@@ -31,11 +34,15 @@ export default function New() {
 
   const navigate = useNavigate();
 
-  return (
-    <CharacterForm
-      handleSubmit={handleSubmit}
-      form={newForm}
-      setForm={setNewForm}
-    />
-  );
+  if (user) {
+    return (
+      <CharacterForm
+        handleSubmit={handleSubmit}
+        form={newForm}
+        setForm={setNewForm}
+      />
+    );
+  } else {
+    return <h1>Please Log in to create a character</h1>;
+  }
 }

@@ -3,6 +3,7 @@
     display: grid;
     grid-template:
     "header header" auto 
+    "creator creator" auto
     "img details" auto
     "stats stats" auto
     "buttons buttons" auto
@@ -54,4 +55,9 @@
 .show-buttons {
     margin: 2rem 0 1rem 0;
     grid-area: buttons;
+}
+
+.creator-info {
+    grid-area: creator;
+    margin: 0 0 1rem 0;
 }

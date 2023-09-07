@@ -1,4 +1,4 @@
-const BASE_URL = `${process.env.REACT_APP_BASE_URL}/`;
+const BASE_URL = `${process.env.REACT_APP_BASE_URL}/characters/`;
 
 export async function index() {
   const res = await fetch(BASE_URL, { method: "GET" });

@@ -7,10 +7,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 import "./Show.css";
 import StatDisplay from "./StatDisplay";
+import Creator from "./Creator";
 
 export default function Show() {
   const { id } = useParams();
   const [char, setChar] = useState(null);
+  const [creator, setCreator] = useState(null);
 
   const navigate = useNavigate();
 
@@ -43,6 +45,8 @@ export default function Show() {
     return (
       <div className="char-page">
         <h1>Character Details:</h1>
+
+        <Creator id={char.owner} creator={creator} setCreator={setCreator} />
 
         <div className="char-image">
           <img
@@ -84,7 +88,7 @@ export default function Show() {
           <StatDisplay stat="Wisdom" value={char.wis} />
           <StatDisplay stat="Charisma" value={char.cha} />
         </div>
-        {user ? (
+        {user && creator && user.email === creator.email ? (
           <Stack
             className="show-buttons"
             spacing={1}

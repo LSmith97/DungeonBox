@@ -1,40 +1,30 @@
 import { useState, useEffect } from "react";
 import { MenuItem, TextField, Button } from "@mui/material";
+import { useQuery, gql } from "@apollo/client"
 import "./CharacterForm.css";
 
 export default function CharacterForm({ handleSubmit, form, setForm, title }) {
-  const [isLoaded, setLoaded] = useState(false);
-  const [options, setOptions] = useState({
-    classes: [],
-    races: [],
-  });
-
-  function handleChange(event) {
-    setForm({ ...form, [event.target.name]: event.target.value });
+  const [options, setOptions] = useState(null);
+  const GET_OPTIONS = gql`
+  query GetOptions {
+    classes {
+      name
+    }
+    races {
+      name
+    }
   }
+  `
+  const { data, loading, error} = useQuery(GET_OPTIONS)
 
   useEffect(() => {
-    fetchAPI();
-  }, []);
+    if(!loading && data){
+      setOptions(data)
+    }
+  }, [loading, data]);
 
-  async function fetchAPI() {
-    const classData = await fetch("https://www.dnd5eapi.co/api/classes", {
-      method: "get",
-    })
-      .then((response) => response.json())
-      .catch((error) => console.log(error));
-
-    const raceData = await fetch("https://www.dnd5eapi.co/api/races", {
-      method: "get",
-    })
-      .then((response) => response.json())
-      .catch((error) => console.log(error));
-
-    setOptions({
-      classes: classData.results,
-      races: raceData.results,
-    });
-    setLoaded(true);
+function handleChange(event) {
+    setForm({ ...form, [event.target.name]: event.target.value });
   }
 
   function loaded() {
@@ -195,9 +185,11 @@ export default function CharacterForm({ handleSubmit, form, setForm, title }) {
     );
   }
 
-  function loading() {
-    return <h1>Loading...</h1>;
+  function waiting() {
+    return (
+      <h1>Loading</h1>
+    )
   }
 
-  return isLoaded ? loaded() : loading();
+  return options ? loaded() : waiting()
 }

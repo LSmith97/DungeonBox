@@ -18,13 +18,13 @@ export default function CharacterForm({ handleSubmit, form, setForm, title }) {
   }, []);
 
   async function fetchAPI() {
-    const classData = await fetch("http://www.dnd5eapi.co/api/classes", {
+    const classData = await fetch("https://www.dnd5eapi.co/api/classes", {
       method: "get",
     })
       .then((response) => response.json())
       .catch((error) => console.log(error));
 
-    const raceData = await fetch("http://www.dnd5eapi.co/api/races", {
+    const raceData = await fetch("https://www.dnd5eapi.co/api/races", {
       method: "get",
     })
       .then((response) => response.json())

@@ -10,7 +10,7 @@ export default function StatDisplay({ stat, value }) {
     >
       <h3>{stat}:</h3>
       <div className="stat-bubble">
-        <h3>{(value - 10 >= 0 ? "+" : "") + (value - 10) / 2}</h3>
+        <h3>{(value - 10 >= 0 ? "+" : "") + Math.floor((value - 10) / 2)}</h3>
         <p>{value}</p>
       </div>
     </Stack>

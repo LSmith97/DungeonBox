@@ -4,7 +4,6 @@ import { getOne, deleteChar } from "../../utilities/characters-service";
 import { Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useQuery, gql } from "@apollo/client";
 
 import "./Show.css";
 import StatDisplay from "./StatDisplay";
@@ -14,56 +13,14 @@ export default function Show() {
   const { id } = useParams();
   const [char, setChar] = useState(null);
   const [creator, setCreator] = useState(null);
-  const [info, setInfo] = useState(null);
+
   const navigate = useNavigate();
+
   const { user } = useAuth0();
-
-  const GET_INFO = gql`
-    query CharInfo($race: String, $class: String) {
-      class(index: $class) {
-        hit_die
-      }
-      race(index: $race) {
-        size
-        speed
-        subraces {
-          ability_bonuses {
-            ability_score {
-              name
-            }
-            bonus
-          }
-        }
-        ability_bonuses {
-          ability_score {
-            index
-          }
-          bonus
-        }
-      }
-    }
-  `;
-
-  let charRace = "";
-  let charClass = "";
-  if (char) {
-    charRace = char.race;
-    charClass = char.class;
-  }
-
-  const { loading, error, data } = useQuery(GET_INFO, {
-    variables: { charClass, charRace },
-  });
 
   useEffect(() => {
     handleRequest();
   }, []);
-
-  useEffect(() => {
-    if (!loading && data) {
-      setInfo(data);
-    }
-  }, [loading, data]);
 
   async function handleRequest() {
     try {
@@ -120,12 +77,6 @@ export default function Show() {
             <h3>Class:</h3>
             <p>{char.class}</p>
           </Stack>
-          {info ? (
-          <Stack spacing={1} direction="row">
-            <h3>Hit Points:</h3>
-            <p>{info.class.hit_die + Math.ceil(info.class.hit_die / 2) * (char.level-1)}</p>
-          </Stack>
-          ) : ''}
         </Stack>
 
         <div className="stats">
@@ -159,9 +110,9 @@ export default function Show() {
     );
   }
 
-  function waiting() {
+  function loading() {
     return <h1>Loading...</h1>;
   }
 
-  return char ? loaded() : waiting();
+  return char ? loaded() : loading();
 }

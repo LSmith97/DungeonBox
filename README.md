@@ -4,6 +4,10 @@ DungeonBox is a web-based application that allows you to create and manage chara
 
 You can find the deployed application [here](https://dungeonbox.netlify.app/)
 
+## Planning
+
+Planning Doc can be found [here](https://github.com/LSmith97/DungeonBox/blob/main/PLANNING.md)
+
 ## Screenshots
 
 ![index page](https://i.imgur.com/poho1dD.png)

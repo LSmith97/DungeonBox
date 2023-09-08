@@ -27,3 +27,5 @@ Show:
 ![ERD](https://github.com/LSmith97/DungeonBox/blob/main/resources/DungeonBox%20ERD.drawio.png)
 
 ## Component Tree
+
+![Component Tree](https://github.com/LSmith97/DungeonBox/blob/main/resources/Component%20tree.drawio.png)

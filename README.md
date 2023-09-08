@@ -30,7 +30,7 @@ Planning Doc can be found [here](https://github.com/LSmith97/DungeonBox/blob/mai
 
 ## Getting Started
 
-Visit DungeonBox [here](https://dungeonbox.netlify.app/)
+Application deployed with Netlify: [here](https://dungeonbox.netlify.app/)
 
 ### What is DungeonBox?
 

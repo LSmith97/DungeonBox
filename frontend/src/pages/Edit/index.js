@@ -42,6 +42,7 @@ export default function New() {
           handleSubmit={handleSubmit}
           form={editForm}
           setForm={setEditForm}
+          title={"Edit Character"}
         />
       );
     } else {

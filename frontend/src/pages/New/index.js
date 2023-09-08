@@ -41,6 +41,7 @@ export default function New() {
         handleSubmit={handleSubmit}
         form={newForm}
         setForm={setNewForm}
+        title={"New Character"}
       />
     );
   } else {

@@ -1,13 +1,76 @@
 .new-char-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: grid;
+  row-gap: 1.5rem;
+  justify-items: center;
+  grid-template:
+    "header header" auto
+    "name level" auto
+    "class race" auto
+    "image image" auto
+    "stats stats" auto
+    "..... submit" auto
+    / 1fr 1fr;
+
+  width: 70%;
+  margin: 2rem auto 0 auto;
+  background-color: rgb(15, 25, 36);
+  color: white;
+  padding: 1rem;
+  border: 1px solid hsl(0, 0%, 50%);
+  border-radius: 5rem;
+}
+
+.new-char-form > h1 {
+  grid-area: header;
+}
+
+.img-field{
+  grid-area: image;
+}
+
+.new-char-form button {
+  grid-area: submit;
+  width: 10rem;
+}
+
+.new-char-form input {
+  width: 15rem;
+}
+.new-char-form .MuiSelect-select {
+  width: 14rem;
+}
+
+.img-field input{
+    width: 40rem;
+}
+
+.form-stats {
+  grid-area: stats;
+
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  grid-template:
+    "header  header header" auto
+    "p p p" auto
+    ". . ." auto
+    ". . ."
+    / 1fr 1fr;
+}
+
+.form-stats h2 {
+  grid-area: header;
+  margin: 0;
+}
+
+.form-stats > p {
+  grid-area: p;
 }
 
 .MuiFormHelperText-filled {
-    color: white;
+  color: white;
 }
 
 .MuiSelect-select {
-    background-color: white;
+  background-color: white;
 }

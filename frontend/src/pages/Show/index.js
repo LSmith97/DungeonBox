@@ -52,23 +52,23 @@ export default function Show() {
 
       data.races.forEach((r) => {
         if (r.name === char.race) {
-          raceInfo = {...r};
+          raceInfo = { ...r };
         }
       });
 
       data.classes.forEach((c) => {
         if (c.name === char.class) {
-          classInfo = {...c};
+          classInfo = { ...c };
         }
       });
 
-      let abilityBonus = {}
+      let abilityBonus = {};
 
-      raceInfo.ability_bonuses.forEach(element => {
-        abilityBonus[element.ability_score.index] = element.bonus
+      raceInfo.ability_bonuses.forEach((element) => {
+        abilityBonus[element.ability_score.index] = element.bonus;
       });
 
-      raceInfo.ability_bonuses = abilityBonus
+      raceInfo.ability_bonuses = abilityBonus;
 
       setInfo({ raceInfo, classInfo });
     }
@@ -155,12 +155,60 @@ export default function Show() {
 
         <div className="stats">
           <h1>Stats:</h1>
-          <StatDisplay stat="Strength" value={char.str} asi={info && info.raceInfo.ability_bonuses.str ? info.raceInfo.ability_bonuses.str : 0} />
-          <StatDisplay stat="Dexterity" value={char.dex} asi={info && info.raceInfo.ability_bonuses.dex ? info.raceInfo.ability_bonuses.dex : 0} />
-          <StatDisplay stat="Constitution" value={char.con} asi={info && info.raceInfo.ability_bonuses.con ? info.raceInfo.ability_bonuses.con : 0} />
-          <StatDisplay stat="Intelligence" value={char.int} asi={info && info.raceInfo.ability_bonuses.int ? info.raceInfo.ability_bonuses.int : 0} />
-          <StatDisplay stat="Wisdom" value={char.wis} asi={info && info.raceInfo.ability_bonuses.wis ? info.raceInfo.ability_bonuses.wis : 0} />
-          <StatDisplay stat="Charisma" value={char.cha} asi={info && info.raceInfo.ability_bonuses.cha ? info.raceInfo.ability_bonuses.cha : 0} />
+          <StatDisplay
+            stat="Strength"
+            value={char.str}
+            asi={
+              info && info.raceInfo.ability_bonuses.str
+                ? info.raceInfo.ability_bonuses.str
+                : 0
+            }
+          />
+          <StatDisplay
+            stat="Dexterity"
+            value={char.dex}
+            asi={
+              info && info.raceInfo.ability_bonuses.dex
+                ? info.raceInfo.ability_bonuses.dex
+                : 0
+            }
+          />
+          <StatDisplay
+            stat="Constitution"
+            value={char.con}
+            asi={
+              info && info.raceInfo.ability_bonuses.con
+                ? info.raceInfo.ability_bonuses.con
+                : 0
+            }
+          />
+          <StatDisplay
+            stat="Intelligence"
+            value={char.int}
+            asi={
+              info && info.raceInfo.ability_bonuses.int
+                ? info.raceInfo.ability_bonuses.int
+                : 0
+            }
+          />
+          <StatDisplay
+            stat="Wisdom"
+            value={char.wis}
+            asi={
+              info && info.raceInfo.ability_bonuses.wis
+                ? info.raceInfo.ability_bonuses.wis
+                : 0
+            }
+          />
+          <StatDisplay
+            stat="Charisma"
+            value={char.cha}
+            asi={
+              info && info.raceInfo.ability_bonuses.cha
+                ? info.raceInfo.ability_bonuses.cha
+                : 0
+            }
+          />
         </div>
         {user && creator && user.email === creator.email ? (
           <Stack

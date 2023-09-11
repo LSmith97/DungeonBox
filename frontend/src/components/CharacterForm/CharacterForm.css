@@ -24,7 +24,7 @@
   grid-area: header;
 }
 
-.img-field{
+.img-field {
   grid-area: image;
 }
 
@@ -40,8 +40,8 @@
   width: 14rem;
 }
 
-.img-field input{
-    width: 40rem;
+.img-field input {
+  width: 40rem;
 }
 
 .form-stats {

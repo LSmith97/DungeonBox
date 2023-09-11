@@ -1,6 +1,5 @@
 import * as characterAPI from "./characters-api";
 
-
 export async function getCharacters() {
   try {
     const data = await characterAPI.index();
@@ -45,4 +44,3 @@ export async function updateChar(id, data) {
     throw err;
   }
 }
-

@@ -1,6 +1,6 @@
 # DungeonBox
 
-DungeonBox is a web-based application that allows you to create and manage characters for Dungeons & Dragons 5th edition, as well as to view other people's creations. 
+DungeonBox is a web-based application that allows you to create and manage characters for Dungeons & Dragons 5th edition, as well as to view other people's creations.
 
 You can find the deployed application [here](https://dungeonbox.netlify.app/)
 

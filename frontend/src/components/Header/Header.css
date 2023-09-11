@@ -1,18 +1,18 @@
 header {
-    background-color: rgb(16, 20, 24);
+  background-color: rgb(16, 20, 24);
 }
 
 header h1 {
-    color: white;
+  color: white;
 }
 
 .Nav {
-    background-color: rgb(15, 25, 36);
-    padding: .5rem 5% .5rem 5%;
-    display: flex;
-    gap: 20px;
+  background-color: rgb(15, 25, 36);
+  padding: 0.5rem 5% 0.5rem 5%;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-end {
-    margin-left: auto;
+  margin-left: auto;
 }

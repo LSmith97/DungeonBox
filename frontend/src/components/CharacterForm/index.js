@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 import { MenuItem, TextField, Button } from "@mui/material";
-import { useQuery, gql } from "@apollo/client"
+import { useQuery, gql } from "@apollo/client";
 import "./CharacterForm.css";
 
 export default function CharacterForm({ handleSubmit, form, setForm, title }) {
   const [options, setOptions] = useState(null);
   const GET_OPTIONS = gql`
-  query GetOptions {
-    classes {
-      name
+    query GetOptions {
+      classes {
+        name
+      }
+      races {
+        name
+      }
     }
-    races {
-      name
-    }
-  }
-  `
-  const { data, loading, error } = useQuery(GET_OPTIONS)
+  `;
+  const { data, loading, error } = useQuery(GET_OPTIONS);
 
   useEffect(() => {
-    if(!loading && data){
-      setOptions(data)
+    if (!loading && data) {
+      setOptions(data);
     }
   }, [loading, data]);
 
-function handleChange(event) {
+  function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
   }
 
@@ -186,10 +186,8 @@ function handleChange(event) {
   }
 
   function waiting() {
-    return (
-      <h1>Loading</h1>
-    )
+    return <h1>Loading</h1>;
   }
 
-  return options ? loaded() : waiting()
+  return options ? loaded() : waiting();
 }

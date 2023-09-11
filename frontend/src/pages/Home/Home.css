@@ -1,13 +1,13 @@
 .home {
-    width: 60%;
-    margin: 2rem auto 0 auto;
-    background-color: rgb(15, 25, 36);
-    color: white;
-    padding: 3rem;
-    border: 1px solid hsl(0, 0%, 50%);
-    border-radius: 5rem;
+  width: 60%;
+  margin: 2rem auto 0 auto;
+  background-color: rgb(15, 25, 36);
+  color: white;
+  padding: 3rem;
+  border: 1px solid hsl(0, 0%, 50%);
+  border-radius: 5rem;
 }
 
 .home h2 {
-    padding-top: 5rem;
+  padding-top: 5rem;
 }

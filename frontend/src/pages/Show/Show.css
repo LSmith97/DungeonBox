@@ -25,10 +25,10 @@
 }
 
 .details {
-    align-items: center;
-    justify-content: center;
-    
-    justify-self: start;
+  align-items: center;
+  justify-content: center;
+
+  justify-self: start;
 }
 
 .stats {

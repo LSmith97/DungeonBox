@@ -30,8 +30,8 @@ export default function Auth0ProviderWithNavigate({ children }) {
       clientId={clientId}
       authorizationParams={{ redirect_uri: redirectUri }}
       onRedirectCallback={onRedirectCallback}
-      >
-        {children}
+    >
+      {children}
     </Auth0Provider>
   );
 }

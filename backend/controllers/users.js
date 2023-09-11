@@ -10,13 +10,13 @@ const { User } = require("../models");
 ////////////////////////////////
 
 module.exports = {
-    show
-}
+  show,
+};
 
 async function show(req, res) {
-    try {
-      res.json(await User.findById(req.params.id));
-    } catch (error) {
-      res.status(400).json(error);
-    }
+  try {
+    res.json(await User.findById(req.params.id));
+  } catch (error) {
+    res.status(400).json(error);
   }
+}

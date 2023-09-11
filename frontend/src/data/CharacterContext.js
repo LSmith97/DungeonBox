@@ -1,4 +1,4 @@
-import { createContext } from 'react'
-const CharacterContext = createContext()
+import { createContext } from "react";
+const CharacterContext = createContext();
 
-export { CharacterContext}
+export { CharacterContext };

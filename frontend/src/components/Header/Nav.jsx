@@ -20,16 +20,26 @@ export default function Nav() {
           <Link to="/characters/new">
             <Button variant="contained">New Character</Button>
           </Link>
-          <Stack className="nav-end" spacing={1} direction="row" alignItems="center" justifyContent="center" >
+          <Stack
+            className="nav-end"
+            spacing={1}
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
             <h3>Signed in as:</h3>
-            <Avatar alt={user.name} src={user.picture} sx={{ height: 30, width: 30}}/>
+            <Avatar
+              alt={user.name}
+              src={user.picture}
+              sx={{ height: 30, width: 30 }}
+            />
             <h3>{user.name}</h3>
           </Stack>
           <LogoutButton />
         </>
       ) : (
         <div className="nav-end">
-          <LoginButton  />
+          <LoginButton />
         </div>
       )}
     </nav>

@@ -15,7 +15,7 @@ export default function CharacterForm({ handleSubmit, form, setForm, title }) {
     }
   }
   `
-  const { data, loading, error} = useQuery(GET_OPTIONS)
+  const { data, loading, error } = useQuery(GET_OPTIONS)
 
   useEffect(() => {
     if(!loading && data){
